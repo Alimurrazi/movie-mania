@@ -1,0 +1,13 @@
+{
+	"eslint.alwaysShowStatus": true,
+	"eslint.validate": ["javascript", "typescript", "html"],
+	"eslint.options": {
+		"extensions": [".js", ".ts", "html"]
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"peacock.color": "#0e0d06"
+}
