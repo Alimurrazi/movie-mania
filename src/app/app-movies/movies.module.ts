@@ -15,6 +15,7 @@ import { MaterialElevationDirective } from '../directives/material-elevation.dir
 import { GenreDetailsPageComponent } from './components/genre-details-page/genre-details-page.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 const routes: Routes = [
 	{
@@ -25,6 +26,10 @@ const routes: Routes = [
 		path: 'genre/:genreName/:genreId',
 		component: GenreDetailsPageComponent,
 	},
+	{
+		path: 'movie-details/:movieId',
+		component: MovieDetailsComponent,
+	},
 ];
 
 @NgModule({
@@ -34,6 +39,7 @@ const routes: Routes = [
 		MovieItemComponent,
 		MaterialElevationDirective,
 		GenreDetailsPageComponent,
+		MovieDetailsComponent,
 	],
 	imports: [
 		CommonModule,
