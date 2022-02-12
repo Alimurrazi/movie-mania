@@ -12,16 +12,29 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LineTruncationLibModule } from 'ngx-line-truncation';
 import { MaterialElevationDirective } from '../directives/material-elevation.directive';
+import { GenreDetailsPageComponent } from './components/genre-details-page/genre-details-page.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: OverviewComponent,
 	},
+	{
+		path: 'genre/:genreName/:genreId',
+		component: GenreDetailsPageComponent,
+	},
 ];
 
 @NgModule({
-	declarations: [OverviewComponent, GenreWithSamplesComponent, MovieItemComponent, MaterialElevationDirective],
+	declarations: [
+		OverviewComponent,
+		GenreWithSamplesComponent,
+		MovieItemComponent,
+		MaterialElevationDirective,
+		GenreDetailsPageComponent,
+	],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
@@ -32,6 +45,8 @@ const routes: Routes = [
 		FlexLayoutModule,
 		MatTooltipModule,
 		LineTruncationLibModule,
+		MatInputModule,
+		MatSelectModule,
 	],
 })
 export class AppMoviesModule {}

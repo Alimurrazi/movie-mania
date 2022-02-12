@@ -1,0 +1,22 @@
+<div class="container">
+	<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+		<div class="primary-title">{{ genreName }}</div>
+		<mat-form-field appearance="fill">
+			<mat-label>Sorted By</mat-label>
+			<mat-select [(value)]="selectedFilter">
+				<mat-option *ngFor="let item of filterItms" [value]="item.value" (click)="filterValueChange(item.value)">
+					{{ item.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<div (click)="orderChange()">
+			<mat-icon *ngIf="isAscending" matTooltip="Ascending order" class="cursor-pointer">arrow_upward</mat-icon>
+			<mat-icon *ngIf="!isAscending" matTooltip="Descending order" class="cursor-pointer">arrow_downward</mat-icon>
+		</div>
+	</div>
+	<div class="wrap" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+		<div *ngFor="let item of movieItems">
+			<app-movie-item [config]="item"></app-movie-item>
+		</div>
+	</div>
+</div>

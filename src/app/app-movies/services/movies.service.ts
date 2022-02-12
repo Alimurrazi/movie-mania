@@ -14,9 +14,9 @@ export class MoviesService {
 		return this.httpClient.get<Genre>(`https://api.themoviedb.org/3/genre/movie/list?api_key=${environment.apiKey}`);
 	}
 
-	getGenreSamples(genreId: number): Observable<GenreWithSamples> {
+	getGenreSamples(genreId: number, sortedBy = 'popularity.desc'): Observable<GenreWithSamples> {
 		return this.httpClient.get<GenreWithSamples>(
-			`https://api.themoviedb.org/3/discover/movie?api_key=${environment.apiKey}&with_genres=${genreId}`
+			`https://api.themoviedb.org/3/discover/movie?api_key=${environment.apiKey}&with_genres=${genreId}&sort_by=${sortedBy}`
 		);
 	}
 }
