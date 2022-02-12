@@ -3,6 +3,15 @@ import { CommonModule } from '@angular/common';
 import { OverviewComponent } from './components/overview/overview.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { GenreWithSamplesComponent } from './components/genre-with-samples/genre-with-samples.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { LineTruncationLibModule } from 'ngx-line-truncation';
+import { MaterialElevationDirective } from '../directives/material-elevation.directive';
 
 const routes: Routes = [
 	{
@@ -12,7 +21,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [OverviewComponent],
-	imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule],
+	declarations: [OverviewComponent, GenreWithSamplesComponent, MovieItemComponent, MaterialElevationDirective],
+	imports: [
+		CommonModule,
+		RouterModule.forChild(routes),
+		HttpClientModule,
+		MatCardModule,
+		MatButtonModule,
+		MatIconModule,
+		FlexLayoutModule,
+		MatTooltipModule,
+		LineTruncationLibModule,
+	],
 })
 export class AppMoviesModule {}

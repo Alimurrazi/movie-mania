@@ -1,0 +1,14 @@
+.container {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 16px;
+    width: 100%;
+    overflow-x: scroll;
+    .title {
+        font-size: 160%;
+        color: #333333;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+}

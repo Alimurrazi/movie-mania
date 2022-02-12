@@ -286,3 +286,6 @@ svg#clouds {
 		visibility: hidden;
 	}
 }
+.router-container {
+	padding: 20px;
+}

@@ -5,6 +5,33 @@
 .w-100 {
 	width: 100%;
 }
+.ml-4 {
+	margin-left: 4px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	background-color: #f1f2f4;
+}
+
+.mat-card-image {
+	margin: auto !important;
+	width: auto !important;
+}
+.mat-card-header-text {
+	margin-left: 0px !important;
+}
+.mat-card {
+	height: 550px !important;
+	position: relative;
+}
+.mat-card-actions {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 12px !important;
+}

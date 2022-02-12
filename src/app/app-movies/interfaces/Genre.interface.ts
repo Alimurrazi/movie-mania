@@ -1,4 +1,4 @@
-interface genreItem {
+export interface genreItem {
 	id: number;
 	name: string;
 }

@@ -1,0 +1,25 @@
+<mat-card class="example-card" appMaterialElevation>
+	<mat-card-header>
+		<mat-card-title>{{ config.title }}</mat-card-title>
+		<mat-card-subtitle fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+			<div fxLayout="row" fxLayoutAlign="start center" matTooltip="rating">
+				<mat-icon class="star-icon">grade</mat-icon>
+				<span class="ml-4">{{ config.vote_average }}</span>
+			</div>
+			<div fxLayout="row" fxLayoutAlign="start center" matTooltip="votes">
+				<mat-icon class="people-icon">people</mat-icon>
+				<span class="ml-4">{{ config.vote_count }}</span>
+			</div>
+		</mat-card-subtitle>
+	</mat-card-header>
+
+	<img mat-card-image src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ config.poster_path }}" alt="{{ config.title }}" />
+	<mat-card-content>
+		<p class="overview" [line-truncation]="3">
+			{{ config.overview }}
+		</p>
+	</mat-card-content>
+	<mat-card-actions>
+		<button mat-button>Wishlist</button>
+	</mat-card-actions>
+</mat-card>

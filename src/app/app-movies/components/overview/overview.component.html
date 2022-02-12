@@ -1,1 +1,5 @@
-<p>overview works!</p>
+<div class="container">
+	<div *ngFor="let genre of genreList">
+		<app-genre-with-samples [name]="genre.name" [id]="genre.id"></app-genre-with-samples>
+	</div>
+</div>
