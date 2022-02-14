@@ -16,6 +16,7 @@ import { GenreDetailsPageComponent } from './components/genre-details-page/genre
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { PersonalInfoComponent } from './components/movie-details/components/personal-info/personal-info.component';
 
 const routes: Routes = [
 	{
@@ -40,6 +41,7 @@ const routes: Routes = [
 		MaterialElevationDirective,
 		GenreDetailsPageComponent,
 		MovieDetailsComponent,
+		PersonalInfoComponent,
 	],
 	imports: [
 		CommonModule,

@@ -22,7 +22,7 @@ export class MoviesService {
 		);
 	}
 
-	getMovieDetailsCreditsRecommends(movieId: number): Observable<(MovieDetails | Credits | MovieRecommends)[]> {
+	getMovieDetailsCreditsRecommends(movieId: number): Observable<any[]> {
 		const detailsUrl = this.httpClient.get<MovieDetails>(
 			`https://api.themoviedb.org/3/movie/${movieId}?api_key=${environment.apiKey}`
 		);

@@ -5,6 +5,9 @@
 .w-100 {
 	width: 100% !important;
 }
+.w-50 {
+	width: 50% !important;
+}
 .ml-4 {
 	margin-left: 4px !important;
 }
@@ -13,6 +16,12 @@
 }
 .mb-16 {
 	margin-bottom: 16px !important;
+}
+.mb-12 {
+	margin-bottom: 12px !important;
+}
+.mt-8 {
+	margin-top: 8px !important;
 }
 .wrap {
 	flex-wrap: wrap;
@@ -54,4 +63,10 @@ body {
 	position: absolute;
 	bottom: 0;
 	margin-bottom: 12px !important;
+}
+.w-fit-content {
+	width: fit-content !important;
+}
+.h-fit-content {
+	height: fit-content !important;
 }

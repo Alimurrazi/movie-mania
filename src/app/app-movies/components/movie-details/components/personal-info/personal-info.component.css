@@ -1,0 +1,22 @@
+.name {
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.00937em;
+	line-height: 1.25rem;
+	color: rgba(0, 0, 0, 0.87);
+	margin-bottom: 0.12rem;
+	text-decoration: none;
+	overflow: hidden;
+	white-space: pre;
+	text-overflow: ellipsis;
+}
+.job {
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.03125em;
+	line-height: 1.5rem;
+	color: rgba(0, 0, 0, 0.54);
+}
+.default-pic {
+	width: 138px;
+}
