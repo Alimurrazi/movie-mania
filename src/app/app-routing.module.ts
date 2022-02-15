@@ -12,6 +12,10 @@ const routes: Routes = [
 		path: 'movies',
 		loadChildren: () => import('./app-movies/movies.module').then((module) => module.AppMoviesModule),
 	},
+	{
+		path: 'wishlist',
+		loadChildren: () => import('./app-wishlist/wishlist.module').then((module) => module.AppWishlistModule),
+	},
 ];
 
 @NgModule({

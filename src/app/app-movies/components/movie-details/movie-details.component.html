@@ -21,7 +21,14 @@
 				<div class="cursor-pointer" matTooltip="imdb">
 					<a href="https://www.imdb.com/title/{{ details.imdb_id }}"><img src="assets/imdb.svg" /></a>
 				</div>
-				<div class="cursor-pointer" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px" matTooltip="bookmark">
+				<div
+					class="cursor-pointer"
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					fxLayoutGap="4px"
+					matTooltip="wishlist"
+					(click)="addToWishList(details)"
+				>
 					<mat-icon class="people-icon">bookmark_border</mat-icon>
 				</div>
 			</div>

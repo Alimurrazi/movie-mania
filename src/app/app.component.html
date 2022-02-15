@@ -1,6 +1,10 @@
 <div class="container">
 	<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
-		<span class="cursor-pointer" routerLink="">Movie catalog</span> <span>Wishlist</span>
+		<span class="cursor-pointer" routerLink="">Movie catalog</span>
+		<div class="cursor-pointer" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="start center" routerLink="/wishlist">
+			<span>Wishlist</span>
+			<span *ngIf="wishlistLength$">( {{ wishlistLength$ | async }} )</span>
+		</div>
 	</mat-toolbar>
 	<div class="router-container">
 		<router-outlet></router-outlet>

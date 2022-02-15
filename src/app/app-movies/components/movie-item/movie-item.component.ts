@@ -1,4 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { MovieBasicInfo } from 'src/app/store/models/movieBasicInfo.model';
+import { AppState } from 'src/app/store/models/state.model';
+import { AddToWishListAction } from '../../../store/actions/wishlist.action';
 import { MovieListItem } from '../../interfaces/GenreWithSamples.interface';
 
 @Component({
@@ -8,7 +13,22 @@ import { MovieListItem } from '../../interfaces/GenreWithSamples.interface';
 })
 export class MovieItemComponent implements OnInit {
 	@Input() config: MovieListItem;
-	constructor() {}
+	wishListItems$: Observable<MovieBasicInfo[]>;
+	itemsLength$;
+	constructor(private readonly store: Store<AppState>) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.wishListItems$ = this.store.select((store) => store.wishList.movies);
+		this.itemsLength$ = this.store.select((store) => store.wishList.movies.length);
+	}
+
+	addToWishList(): void {
+		const wishlistState: MovieBasicInfo = {
+			id: this.config.id,
+			title: this.config.title,
+			poster_path: this.config.poster_path,
+			overview: this.config.overview,
+		};
+		this.store.dispatch(new AddToWishListAction(wishlistState));
+	}
 }

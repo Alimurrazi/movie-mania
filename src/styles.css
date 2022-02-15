@@ -8,11 +8,20 @@
 .w-50 {
 	width: 50% !important;
 }
+.w-80-p {
+	width: 80% !important;
+}
+.w-20-p {
+	width: 20% !important;
+}
 .ml-4 {
 	margin-left: 4px !important;
 }
 .ml-12 {
 	margin-left: 12px !important;
+}
+.mt-16 {
+	margin-top: 16px !important;
 }
 .mb-16 {
 	margin-bottom: 16px !important;
@@ -22,6 +31,9 @@
 }
 .mt-8 {
 	margin-top: 8px !important;
+}
+.mt-20 {
+	margin-top: 20px !important;
 }
 .wrap {
 	flex-wrap: wrap;

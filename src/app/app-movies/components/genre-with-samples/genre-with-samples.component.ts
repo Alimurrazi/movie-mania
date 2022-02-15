@@ -22,7 +22,6 @@ export class GenreWithSamplesComponent implements OnInit {
 		this.moviesService.getGenreSamples(this.id).subscribe(
 			(res) => {
 				this.movieItems = res.results.length >= 5 ? res.results.splice(0, 5) : res.results;
-				console.log(this.movieItems);
 			},
 			(err) => {
 				console.log(err);

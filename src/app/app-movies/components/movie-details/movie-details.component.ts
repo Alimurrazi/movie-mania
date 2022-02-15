@@ -4,6 +4,10 @@ import { Credits } from '../../interfaces/Credits.interface';
 import { MovieDetails } from '../../interfaces/MovieDetails.interface';
 import { MovieRecommends } from '../../interfaces/MovieRecommends.interface';
 import { MoviesService } from '../../services/movies.service';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/models/state.model';
+import { MovieBasicInfo } from 'src/app/store/models/movieBasicInfo.model';
+import { AddToWishListAction } from 'src/app/store/actions/wishlist.action';
 
 @Component({
 	selector: 'app-movie-details',
@@ -12,10 +16,15 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class MovieDetailsComponent implements OnInit {
 	movieId: number;
-	details: MovieDetails;
-	credits: Credits;
-	recommends: MovieRecommends;
-	constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService, private router: Router) {
+	details: MovieDetails[];
+	credits: Credits[];
+	recommends: MovieRecommends[];
+	constructor(
+		private activatedRoute: ActivatedRoute,
+		private moviesService: MoviesService,
+		private router: Router,
+		private readonly store: Store<AppState>
+	) {
 		this.router.routeReuseStrategy.shouldReuseRoute = function () {
 			return false;
 		};
@@ -37,5 +46,14 @@ export class MovieDetailsComponent implements OnInit {
 				console.log(err);
 			}
 		);
+	}
+	addToWishList(movie: MovieDetails): void {
+		const wishlistState: MovieBasicInfo = {
+			id: movie.id,
+			title: movie.title,
+			poster_path: movie.poster_path,
+			overview: movie.overview,
+		};
+		this.store.dispatch(new AddToWishListAction(wishlistState));
 	}
 }
