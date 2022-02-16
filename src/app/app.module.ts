@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers } from './store/reducers';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { reducers } from './store/reducers';
 		BrowserAnimationsModule,
 		FlexLayoutModule,
 		StoreModule.forRoot(reducers),
+		SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

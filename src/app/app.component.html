@@ -1,12 +1,17 @@
-<div class="container">
-	<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="container h-100" fxLayout="column">
+	<mat-toolbar class="py-12" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
 		<span class="cursor-pointer" routerLink="">Movie catalog</span>
 		<div class="cursor-pointer" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="start center" routerLink="/wishlist">
 			<span>Wishlist</span>
 			<span *ngIf="wishlistLength$">( {{ wishlistLength$ | async }} )</span>
 		</div>
 	</mat-toolbar>
-	<div class="router-container">
-		<router-outlet></router-outlet>
+	<div class="main-part" fxLayout="column" fxLayoutAlign="space-between start">
+		<div class="router-container w-100">
+			<router-outlet></router-outlet>
+		</div>
+		<div class="w-100">
+			<app-recent-movies></app-recent-movies>
+		</div>
 	</div>
 </div>

@@ -20,6 +20,7 @@
 			src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ config.poster_path }}"
 			alt="{{ config.title }}"
 		/>
+		<img *ngIf="!config.poster_path" src="assets/default_poster.jpg" />
 		<p class="overview" [line-truncation]="3">
 			{{ config.overview }}
 		</p>

@@ -35,11 +35,21 @@
 .mt-20 {
 	margin-top: 20px !important;
 }
+.p-12 {
+	padding: 12px !important;
+}
+.py-12 {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
 .wrap {
 	flex-wrap: wrap;
 }
 .cursor-pointer {
 	cursor: pointer;
+}
+app-recent-movies {
+	width: 100%;
 }
 
 html,
@@ -50,6 +60,9 @@ body {
 	margin: 0;
 	font-family: Roboto, 'Helvetica Neue', sans-serif;
 	background-color: #f1f2f4;
+}
+app-root {
+	height: 100%;
 }
 
 .primary-title {
