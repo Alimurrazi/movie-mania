@@ -7,6 +7,7 @@ import { GenreWithSamples } from '../interfaces/GenreWithSamples.interface';
 import { MovieDetails } from '../interfaces/MovieDetails.interface';
 import { Credits } from '../interfaces/Credits.interface';
 import { MovieRecommends } from '../interfaces/MovieRecommends.interface';
+import { MovieVideos } from '../interfaces/MovieVideos.interface';
 @Injectable({
 	providedIn: 'root',
 })
@@ -33,5 +34,11 @@ export class MoviesService {
 			`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${environment.apiKey}`
 		);
 		return forkJoin([detailsUrl, creditsUrl, recommendUrl]);
+	}
+
+	getMovieVideos(movieId: number): Observable<MovieVideos> {
+		return this.httpClient.get<MovieVideos>(
+			`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${environment.apiKey}`
+		);
 	}
 }

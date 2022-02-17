@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AddToWishListAction } from 'src/app/store/actions/wishlist.action';
+import { MovieBasicInfo } from 'src/app/store/models/movieBasicInfo.model';
+import { AppState } from 'src/app/store/models/state.model';
+import { RecentMovie } from '../../../shared/interfaces/ReacentMovie.interface';
 import { Credits } from '../../interfaces/Credits.interface';
 import { MovieDetails } from '../../interfaces/MovieDetails.interface';
 import { MovieRecommends } from '../../interfaces/MovieRecommends.interface';
 import { MoviesService } from '../../services/movies.service';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/models/state.model';
-import { MovieBasicInfo } from 'src/app/store/models/movieBasicInfo.model';
-import { AddToWishListAction } from 'src/app/store/actions/wishlist.action';
-import { RecentMovie } from '../../../shared/interfaces/ReacentMovie.interface';
+import { MovieTrailerComponent } from '../movie-trailer/movie-trailer.component';
 
 @Component({
 	selector: 'app-movie-details',
@@ -20,13 +22,15 @@ export class MovieDetailsComponent implements OnInit {
 	details: MovieDetails;
 	credits: Credits;
 	recommends: MovieRecommends[];
+	trailerKey = '';
 	LOCAL_STORAGE_TITLE = 'recent-movie-storage-xyz';
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private moviesService: MoviesService,
 		private router: Router,
-		private readonly store: Store<AppState>
+		private readonly store: Store<AppState>,
+		public dialog: MatDialog
 	) {
 		this.router.routeReuseStrategy.shouldReuseRoute = function () {
 			return false;
@@ -36,6 +40,7 @@ export class MovieDetailsComponent implements OnInit {
 	ngOnInit(): void {
 		this.movieId = this.activatedRoute.snapshot.params.movieId;
 		this.getMovieDetails();
+		this.checkIfVideoExists();
 	}
 
 	checkIfMovieExists(id: number, movies: RecentMovie[]): boolean {
@@ -90,5 +95,30 @@ export class MovieDetailsComponent implements OnInit {
 			overview: movie.overview,
 		};
 		this.store.dispatch(new AddToWishListAction(wishlistState));
+	}
+
+	checkIfVideoExists(): void {
+		this.moviesService.getMovieVideos(this.movieId).subscribe(
+			(res) => {
+				const videos = res.results;
+				const index = videos.findIndex(
+					(video) => video.official === true && video.site === 'YouTube' && video.type === 'Trailer'
+				);
+				if (index !== -1) {
+					this.trailerKey = videos[index].key;
+				}
+			},
+			(err) => {
+				console.log(err);
+			}
+		);
+	}
+
+	openTrailerDialog(): void {
+		this.dialog.open(MovieTrailerComponent, {
+			data: {
+				key: this.trailerKey,
+			},
+		});
 	}
 }

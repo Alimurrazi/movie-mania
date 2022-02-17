@@ -25,11 +25,20 @@
 					class="cursor-pointer"
 					fxLayout="row"
 					fxLayoutAlign="start center"
-					fxLayoutGap="4px"
 					matTooltip="wishlist"
 					(click)="addToWishList(details)"
 				>
 					<mat-icon class="people-icon">bookmark_border</mat-icon>
+				</div>
+				<div
+					*ngIf="trailerKey"
+					class="cursor-pointer"
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					matTooltip="trailer"
+					(click)="openTrailerDialog()"
+				>
+					<mat-icon>play_circle</mat-icon>
 				</div>
 			</div>
 			<p>
@@ -56,7 +65,7 @@
 			</div>
 		</div>
 	</div>
-	<div *ngIf="recommends" fxLayout="column">
+	<div *ngIf="recommends && recommends.length" fxLayout="column">
 		<div class="mt-8">
 			<p class="primary-title">Recommends</p>
 			<div class="w-100 wrap" fxLayout="row" fxLayoutGap="12px">

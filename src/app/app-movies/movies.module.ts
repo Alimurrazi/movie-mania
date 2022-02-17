@@ -17,6 +17,8 @@ import { PersonalInfoComponent } from './components/movie-details/components/per
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
 	{
@@ -42,6 +44,7 @@ const routes: Routes = [
 		GenreDetailsPageComponent,
 		MovieDetailsComponent,
 		PersonalInfoComponent,
+		MovieTrailerComponent,
 	],
 	imports: [
 		CommonModule,
@@ -55,6 +58,8 @@ const routes: Routes = [
 		LineTruncationLibModule,
 		MatInputModule,
 		MatSelectModule,
+		MatDialogModule,
 	],
+	entryComponents: [MovieTrailerComponent],
 })
 export class AppMoviesModule {}
