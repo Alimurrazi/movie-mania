@@ -12,6 +12,7 @@ export class RecentMoviesComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {
-		this.movies = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_TITLE));
+		const store = localStorage.getItem(this.LOCAL_STORAGE_TITLE);
+		this.movies = store ? JSON.parse(store) : [];
 	}
 }

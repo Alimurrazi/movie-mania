@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieListItem } from '../../interfaces/GenreWithSamples.interface';
 import { MoviesService } from '../../services/movies.service';
@@ -24,6 +23,7 @@ export class GenreWithSamplesComponent implements OnInit {
 				this.movieItems = res.results.length >= 5 ? res.results.splice(0, 5) : res.results;
 			},
 			(err) => {
+				// eslint-disable-next-line no-console
 				console.log(err);
 			}
 		);
