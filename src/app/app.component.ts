@@ -7,7 +7,7 @@ import { AppState } from './store/models/state.model';
 	styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-	title = 'cefalo-movie-mania';
+	title = 'movie-mania';
 	wishlistLength$;
 	constructor(private readonly store: Store<AppState>) {}
 	ngOnInit(): void {

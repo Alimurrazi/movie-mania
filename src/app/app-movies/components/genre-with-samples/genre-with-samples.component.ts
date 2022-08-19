@@ -20,7 +20,7 @@ export class GenreWithSamplesComponent implements OnInit {
 	getMovieList(): void {
 		this.moviesService.getGenreSamples(this.id).subscribe(
 			(res) => {
-				this.movieItems = res.results.length >= 5 ? res.results.splice(0, 5) : res.results;
+				this.movieItems = res.results.length >= 6 ? res.results.splice(0, 6) : res.results;
 			},
 			(err) => {
 				// eslint-disable-next-line no-console

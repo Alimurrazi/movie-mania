@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"cefalo-movie-mania": {
+		"movie-mania": {
 			"projectType": "application",
 			"schematics": {},
 			"root": "",
@@ -13,7 +13,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/cefalo-movie-mania",
+						"outputPath": "dist/movie-mania",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
@@ -56,18 +56,18 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "cefalo-movie-mania:build"
+						"browserTarget": "movie-mania:build"
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "cefalo-movie-mania:build:production"
+							"browserTarget": "movie-mania:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "cefalo-movie-mania:build"
+						"browserTarget": "movie-mania:build"
 					}
 				},
 				"test": {
@@ -93,16 +93,16 @@
 					"builder": "@angular-devkit/build-angular:protractor",
 					"options": {
 						"protractorConfig": "e2e/protractor.conf.js",
-						"devServerTarget": "cefalo-movie-mania:serve"
+						"devServerTarget": "movie-mania:serve"
 					},
 					"configurations": {
 						"production": {
-							"devServerTarget": "cefalo-movie-mania:serve:production"
+							"devServerTarget": "movie-mania:serve:production"
 						}
 					}
 				}
 			}
 		}
 	},
-	"defaultProject": "cefalo-movie-mania"
+	"defaultProject": "movie-mania"
 }
