@@ -10,8 +10,9 @@ import { MoviesService } from '../../services/movies.service';
 export class GenreWithSamplesComponent implements OnInit {
 	movieItems: MovieListItem[] = [];
 	constructor(private moviesService: MoviesService) {}
-	@Input() name: string;
-	@Input() id: number;
+	@Input() name: string = '';
+	@Input()
+	id!: number;
 	ngOnInit(): void {
 		if (this.id !== null) {
 			this.getMovieList();

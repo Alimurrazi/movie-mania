@@ -1,12 +1,12 @@
-<div class="container h-100" fxLayout="column">
-	<mat-toolbar class="py-12" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="container h-100 fx fx-column">
+	<mat-toolbar class="py-12 fx fx-row fx-justify-space-between fx-align-center" color="primary">
 		<span class="cursor-pointer" routerLink="">Movie catalog</span>
-		<div class="cursor-pointer" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="start center" routerLink="/wishlist">
+		<div class="cursor-pointer fx fx-row fx-justify-start fx-align-center fx-gap-4" routerLink="/wishlist">
 			<span>Wishlist</span>
 			<span *ngIf="wishlistLength$">( {{ wishlistLength$ | async }} )</span>
 		</div>
 	</mat-toolbar>
-	<div class="main-part" fxLayout="column" fxLayoutAlign="space-between start">
+	<div class="main-part fx fx-column fx-justify-space-between fx-align-start">
 		<div class="router-container w-100">
 			<router-outlet></router-outlet>
 		</div>

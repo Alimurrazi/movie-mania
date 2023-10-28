@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PersonalInfoComponent implements OnInit {
 	constructor() {}
 
-	@Input() name: string;
-	@Input() job: string;
-	@Input() img: string;
+	@Input() name: string = '';
+	@Input() job: string = '';
+	@Input() img: string = '';
 	ngOnInit(): void {}
 }
