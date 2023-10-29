@@ -1,7 +1,7 @@
-<div class="container" fxLayout="column">
-	<div fxLayout="column" *ngFor="let movie of movieList">
-		<div fxLayout="row">
-			<div class="w-80-p mt-20" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px">
+<div class="container fx fx-column">
+	<div class="fx fx-column" *ngFor="let movie of movieList">
+		<div class="fx fx-row">
+			<div class="w-80-p mt-20 fx fx-row fx-justify-start fx-align-start fx-gap-12">
 				<div>
 					<img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ movie.poster_path }}" />
 				</div>
@@ -10,7 +10,7 @@
 					<p>{{ movie.overview }}</p>
 				</div>
 			</div>
-			<div class="w-20-p" fxLayout="column" fxLayoutAlign="center center">
+			<div class="w-20-p fx fx-column fx-justify-center fx-align-center">
 				<button mat-icon-button class="mat-icon-btn" (click)="removeFromWishList(movie)">
 					<mat-icon>delete</mat-icon>
 				</button>
@@ -18,7 +18,7 @@
 		</div>
 		<mat-divider class="mt-16"></mat-divider>
 	</div>
-	<div fxLayout="column" *ngIf="movieList.length === 0" fxLayoutAlign="center center">
+	<div class="fx fx-column fx-justify-center fx-align-center" *ngIf="movieList.length === 0">
 		<div class="wishlist-empty">Your Wishlist is empty</div>
 		<div class="wishlist-msg">Add movies and shows to your Wishlist to keep track of what you want to watch.</div>
 	</div>

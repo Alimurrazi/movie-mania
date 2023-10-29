@@ -8,7 +8,7 @@ import { AppState } from 'src/app/store/models/state.model';
 import { RecentMovie } from '../../../shared/interfaces/ReacentMovie.interface';
 import { Credits } from '../../interfaces/Credits.interface';
 import { MovieDetails } from '../../interfaces/MovieDetails.interface';
-import { MovieRecommends } from '../../interfaces/MovieRecommends.interface';
+import { MovieRecommend, MovieRecommends } from '../../interfaces/MovieRecommends.interface';
 import { MoviesService } from '../../services/movies.service';
 import { MovieTrailerComponent } from '../movie-trailer/movie-trailer.component';
 
@@ -18,10 +18,10 @@ import { MovieTrailerComponent } from '../movie-trailer/movie-trailer.component'
 	styleUrls: ['./movie-details.component.scss'],
 })
 export class MovieDetailsComponent implements OnInit {
-	movieId: number;
-	details: MovieDetails;
-	credits: Credits;
-	recommends: MovieRecommends[];
+	movieId!: number;
+	details!: MovieDetails;
+	credits!: Credits;
+	recommends: MovieRecommend[] = [];
 	trailerKey = '';
 	LOCAL_STORAGE_TITLE = 'recent-movie-storage-xyz';
 
@@ -38,7 +38,7 @@ export class MovieDetailsComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.movieId = this.activatedRoute.snapshot.params.movieId;
+		this.movieId = this.activatedRoute.snapshot.params['movieId'];
 		this.getMovieDetails();
 		this.checkIfVideoExists();
 	}
@@ -56,10 +56,15 @@ export class MovieDetailsComponent implements OnInit {
 	}
 
 	setMovieInLocalstorage(details: MovieDetails): void {
-		let movies: RecentMovie[] = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_TITLE));
-		if (!movies) {
-			movies = [];
+		const storageValue = localStorage.getItem(this.LOCAL_STORAGE_TITLE);
+		let movies: RecentMovie[] = [];
+		if (storageValue) {
+			movies = JSON.parse(storageValue);
 		}
+		// let movies: RecentMovie[] = JSON.parse(localStorage.getItem(this.LOCAL_STORAGE_TITLE));
+		// if (!movies) {
+		// 	movies = [];
+		// }
 		const movie: RecentMovie = {
 			id: details.id,
 			poster_path: details.poster_path,

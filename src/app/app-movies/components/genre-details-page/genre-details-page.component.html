@@ -1,5 +1,5 @@
 <div class="container">
-	<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+	<div class="fx fx-row fx-justify-start fx-align-center fx-gap-16">
 		<div class="primary-title">{{ genreName }}</div>
 		<mat-form-field appearance="fill">
 			<mat-label>Sorted By</mat-label>
@@ -14,7 +14,7 @@
 			<mat-icon *ngIf="!isAscending" matTooltip="Descending order" class="cursor-pointer">arrow_downward</mat-icon>
 		</div>
 	</div>
-	<div class="wrap" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+	<div class="wrap fx fx-row fx-justify-center fx-align-center fx-gap-16">
 		<div *ngFor="let item of movieItems">
 			<app-movie-item [config]="item"></app-movie-item>
 		</div>

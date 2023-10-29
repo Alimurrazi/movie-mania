@@ -1,24 +1,22 @@
 <mat-card class="example-card" appMaterialElevation>
 	<mat-card-header>
-		<mat-card-title>{{ config.title }}</mat-card-title>
-		<mat-card-subtitle fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
-			<div fxLayout="row" fxLayoutAlign="start center" matTooltip="rating">
+		<mat-card-title class="title">{{ config.title }}</mat-card-title>
+		<mat-card-subtitle class="fx fx-row fx-justify-start fx-align-center fx-gap-8">
+			<div class="fx fx-row fx-justify-start fx-align-center" matTooltip="rating">
 				<mat-icon class="star-icon">grade</mat-icon>
 				<span class="ml-4">{{ config.vote_average }}</span>
 			</div>
-			<div fxLayout="row" fxLayoutAlign="start center" matTooltip="votes">
+			<div class="fx fx-row fx-justify-start fx-align-center" matTooltip="votes">
 				<mat-icon class="people-icon">people</mat-icon>
 				<span class="ml-4">{{ config.vote_count }}</span>
 			</div>
 		</mat-card-subtitle>
 	</mat-card-header>
 
-	<mat-card-content class="cursor-pointer" routerLink="/movies/movie-details/{{ config.id }}">
+	<mat-card-content class="cursor-pointer card-content" routerLink="/movies/movie-details/{{ config.id }}">
 		<img mat-card-image *ngIf="config.poster_path" [src]="imgSrc" alt="{{ config.title }}" (error)="showPlaceholderImg()" />
 		<img *ngIf="!config.poster_path" src="assets/default_poster.jpg" />
-		<p class="overview" [line-truncation]="3">
-			{{ config.overview }}
-		</p>
+		<p class="overview">{{ config.overview }}</p>
 	</mat-card-content>
 	<mat-card-actions>
 		<button mat-button (click)="addToWishList()">Wishlist</button>

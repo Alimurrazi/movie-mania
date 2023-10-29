@@ -1,10 +1,9 @@
-<div class="container" fxLayout="column" *ngIf="movies.length">
+<div class="container fx fx-column" *ngIf="movies.length">
 	<div class="primary-title ml-12 mt-16">Recent Movies</div>
-	<div class="wrap" fxLayout="row" fxLayoutAlign="start">
+	<div class="wrap fx fx-row fx-justify-start">
 		<div
-			class="p-12 cursor-pointer"
+			class="p-12 cursor-pointer fx fx-column"
 			*ngFor="let movie of movies"
-			fxLayout="column"
 			routerLink="/movies/movie-details/{{ movie.id }}"
 		>
 			<img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ movie.poster_path }}" />

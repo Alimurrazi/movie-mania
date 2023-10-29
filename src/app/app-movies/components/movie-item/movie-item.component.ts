@@ -12,9 +12,10 @@ import { MovieListItem } from '../../interfaces/GenreWithSamples.interface';
 	styleUrls: ['./movie-item.component.scss'],
 })
 export class MovieItemComponent implements OnInit {
-	@Input() config: MovieListItem;
-	wishListItems$: Observable<MovieBasicInfo[]>;
-	itemsLength$;
+	@Input()
+	config!: MovieListItem;
+	wishListItems$!: Observable<MovieBasicInfo[]>;
+	itemsLength$!: Observable<number>;
 	imgSrc = '';
 	constructor(private readonly store: Store<AppState>) {}
 

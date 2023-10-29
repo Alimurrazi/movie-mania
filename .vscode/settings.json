@@ -9,5 +9,24 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	"peacock.color": "#0e0d06"
+	"peacock.color": "#0e0d06",
+	"workbench.colorCustomizations": {
+		"activityBar.activeBackground": "#322e15",
+		"activityBar.background": "#322e15",
+		"activityBar.foreground": "#e7e7e7",
+		"activityBar.inactiveForeground": "#e7e7e799",
+		"activityBarBadge.background": "#2f7067",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"commandCenter.border": "#e7e7e799",
+		"sash.hoverBorder": "#322e15",
+		"statusBar.background": "#0e0d06",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#322e15",
+		"statusBarItem.remoteBackground": "#0e0d06",
+		"statusBarItem.remoteForeground": "#e7e7e7",
+		"titleBar.activeBackground": "#0e0d06",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.inactiveBackground": "#0e0d0699",
+		"titleBar.inactiveForeground": "#e7e7e799"
+	}
 }

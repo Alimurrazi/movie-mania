@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+.h-100 {
+	height: 100% !important;
+}
+.w-100 {
+	width: 100% !important;
+}
+.w-50 {
+	width: 50% !important;
+}
+.w-80-p {
+	width: 80% !important;
+}
+.w-20-p {
+	width: 20% !important;
+}
+.ml-4 {
+	margin-left: 4px !important;
+}
+.ml-12 {
+	margin-left: 12px !important;
+}
+.mt-16 {
+	margin-top: 16px !important;
+}
+.mb-16 {
+	margin-bottom: 16px !important;
+}
+.mb-12 {
+	margin-bottom: 12px !important;
+}
+.mt-8 {
+	margin-top: 8px !important;
+}
+.mt-20 {
+	margin-top: 20px !important;
+}
+.p-12 {
+	padding: 12px !important;
+}
+.py-12 {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+.wrap {
+	flex-wrap: wrap;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
+app-recent-movies {
+	width: 100%;
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	background-color: #f1f2f4;
+}
+app-root {
+	height: 100%;
+}
+
+.primary-title {
+	font-size: 160%;
+	color: #333333;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.mat-card-image {
+	margin: auto !important;
+	width: auto !important;
+}
+.mat-card-header-text {
+	margin-left: 0px !important;
+}
+.mat-card {
+	width: 250px !important;
+	height: 550px !important;
+	position: relative;
+	margin-top: 16px;
+}
+.mat-card-actions {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 12px !important;
+}
+.w-fit-content {
+	width: fit-content !important;
+}
+.h-fit-content {
+	height: fit-content !important;
+}
+.fx {
+	display: flex !important;
+}
+.fx-row {
+	flex-direction: row !important;
+}
+.fx-column {
+	flex-direction: column !important;
+}
+.fx-justify-start {
+	justify-content: start !important;
+}
+.fx-justify-center {
+	justify-content: center !important;
+}
+.fx-justify-space-between {
+	justify-content: space-between !important;
+}
+.fx-align-center {
+	align-items: center !important;
+}
+.fx-align-start {
+	align-items: start !important;
+}
+.fx-gap-4 {
+	gap: 4px !important;
+}
+.fx-gap-8 {
+	gap: 8px !important;
+}
+.fx-gap-12 {
+	gap: 12px !important;
+}
+.fx-gap-16 {
+	gap: 16px !important;
+}

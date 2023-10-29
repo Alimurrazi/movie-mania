@@ -15,8 +15,8 @@ interface FilterItem {
 	styleUrls: ['./genre-details-page.component.scss'],
 })
 export class GenreDetailsPageComponent implements OnInit {
-	genreName: string;
-	genreId: number;
+	genreName: string = '';
+	genreId!: number;
 	movieItems: MovieListItem[] = [];
 	selectedFilter = 'popularity';
 	isAscending = false;
@@ -35,8 +35,8 @@ export class GenreDetailsPageComponent implements OnInit {
 	constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService) {}
 
 	ngOnInit(): void {
-		this.genreId = this.activatedRoute.snapshot.params.genreId;
-		this.genreName = this.activatedRoute.snapshot.params.genreName;
+		this.genreId = this.activatedRoute.snapshot.params['genreId'];
+		this.genreName = this.activatedRoute.snapshot.params['genreName'];
 		this.getGenreDetails();
 	}
 	getGenreDetails(): void {

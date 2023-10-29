@@ -288,6 +288,9 @@ svg#clouds {
 }
 
 .main-part {
-	padding: 20px;
+	padding: 60px;
 	flex: 1;
+}
+.p-16 {
+	padding: 16px !important;
 }

@@ -1,5 +1,5 @@
-<div class="container" fxLayout="column">
-	<div *ngIf="details" fxLayout="row" class="basic-profile w-100-p">
+<div class="container fx fx-column">
+	<div *ngIf="details" class="basic-profile w-100-p fx fx-row">
 		<div class="w-50">
 			<img
 				class="w-fit-content h-fit-content"
@@ -7,14 +7,14 @@
 				src="https://image.tmdb.org/t/p/w300_and_h450_face{{ details.poster_path }}"
 			/>
 		</div>
-		<div class="w-50" fxLayout="column" fxLayoutGap="8px">
+		<div class="w-50 fx fx-column fx-gap-8">
 			<div class="movie-title">{{ details.title }}</div>
-			<div fxLayout="row" fxLayoutGap="8px">
-				<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px" matTooltip="rating">
+			<div class="fx fx-row fx-gap-8">
+				<div class="fx fx-row fx-justify-start fx-align-center fx-gap-4" matTooltip="rating">
 					<mat-icon class="star-icon">grade</mat-icon>
 					<span>{{ details.vote_average }}</span>
 				</div>
-				<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="4px" matTooltip="votes">
+				<div class="fx fx-row fx-justify-start fx-align-center fx-gap-4" matTooltip="votes">
 					<mat-icon class="people-icon">people</mat-icon>
 					<span>{{ details.vote_count }}</span>
 				</div>
@@ -22,9 +22,7 @@
 					<a href="https://www.imdb.com/title/{{ details.imdb_id }}"><img src="assets/imdb.svg" /></a>
 				</div>
 				<div
-					class="cursor-pointer"
-					fxLayout="row"
-					fxLayoutAlign="start center"
+					class="cursor-pointer fx fx-row fx-justify-start fx-align-center"
 					matTooltip="wishlist"
 					(click)="addToWishList(details)"
 				>
@@ -32,9 +30,7 @@
 				</div>
 				<div
 					*ngIf="trailerKey"
-					class="cursor-pointer"
-					fxLayout="row"
-					fxLayoutAlign="start center"
+					class="cursor-pointer fx fx-row fx-justify-start fx-align-center"
 					matTooltip="trailer"
 					(click)="openTrailerDialog()"
 				>
@@ -46,10 +42,10 @@
 			</p>
 		</div>
 	</div>
-	<div *ngIf="credits" fxLayout="column">
+	<div *ngIf="credits" class="fx fx-column">
 		<div class="mt-8">
 			<p class="primary-title">Top Cast</p>
-			<div class="w-100 wrap" fxLayout="row">
+			<div class="w-100 wrap fx fx-row">
 				<div *ngFor="let cast of credits.cast" class="w-50 mb-12">
 					<app-personal-info [name]="cast.name" [job]="cast.character" [img]="cast.profile_path"></app-personal-info>
 				</div>
@@ -58,17 +54,17 @@
 
 		<div class="mt-8">
 			<p class="primary-title">Top Crew</p>
-			<div class="w-100 wrap" fxLayout="row">
+			<div class="w-100 wrap fx fx-row">
 				<div *ngFor="let crew of credits.crew" class="w-50 mb-12">
 					<app-personal-info [name]="crew.name" [job]="crew.job" [img]="crew.profile_path"></app-personal-info>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div *ngIf="recommends && recommends.length" fxLayout="column">
+	<div *ngIf="recommends && recommends.length" class="fx fx-column">
 		<div class="mt-8">
 			<p class="primary-title">Recommends</p>
-			<div class="w-100 wrap" fxLayout="row" fxLayoutGap="12px">
+			<div class="w-100 wrap fx fx-row fx-gap-12">
 				<div *ngFor="let recommend of recommends" class="mb-12">
 					<app-movie-item [config]="recommend"></app-movie-item>
 				</div>

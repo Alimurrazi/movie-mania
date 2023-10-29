@@ -1,9 +1,15 @@
 .star-icon {
-    color: #c39400 !important;
+	color: #c39400 !important;
 }
 .people-icon {
-    color: #61c74f !important;
+	color: #61c74f !important;
 }
-.overview {
-    max-width: 230px;
+.overview,
+.title {
+	max-width: 250px;
+}
+.card-content {
+	padding-top: 16px;
+	height: 450px;
+	overflow: hidden;
 }
