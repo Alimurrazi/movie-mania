@@ -3,7 +3,7 @@
 		<div class="primary-title">{{ name }}</div>
 		<button mat-button class="ml-12" routerLink="genre/{{ name }}/{{ id }}">See More</button>
 	</div>
-	<div class="wrap fx fx-row fx-justify-start fx-align-center fx-gap-16">
+	<div class="wrap fx fx-row fx-justify-start fx-align-start fx-gap-16">
 		<div *ngFor="let item of movieItems">
 			<app-movie-item [config]="item"></app-movie-item>
 		</div>
