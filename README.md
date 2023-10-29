@@ -7,35 +7,6 @@ This website is a movie catalog built on data from [The Movie Database (TMDB)](h
 
 To run this project locally you need to install node and Angular CLI. Here I used node v16.16.0 and angular CLI v15.2.10.
 
-  _                      _                 ____ _     ___
-    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
-
-
-Angular CLI: 15.2.10
-Node: 16.16.0
-Package Manager: npm 8.11.0
-OS: win32 x64
-
-Angular: 15.2.10
-... animations, cli, common, compiler, compiler-cli, core, forms
-... platform-browser, platform-browser-dynamic, router
-
-Package                         Version
----------------------------------------------------------
-@angular-devkit/architect       0.1502.10
-@angular-devkit/build-angular   15.2.10
-@angular-devkit/core            15.2.10
-@angular-devkit/schematics      15.2.10
-@angular/cdk                    15.2.9
-@angular/material               15.2.9
-@schematics/angular             15.2.10
-rxjs                            7.8.1
-typescript                      4.9.5
-
 ### Clone the repo
 
 ```shell
