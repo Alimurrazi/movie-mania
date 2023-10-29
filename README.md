@@ -2,6 +2,7 @@
 This website is a movie catalog built on data from [The Movie Database (TMDB)](https://www.themoviedb.org/). Users can explore movies by category and navigate within categories. The movie details page provides in-depth information, including cast, trailers, and recommendations. The project is developed using Angular, Material UI, and Redux for state management. It also utilizes local storage to track recent movie visits.
 
 ## Get started
+Working site - https://alimurrazi.github.io/movie-mania/movies
 
 ## Prerequisite
 
